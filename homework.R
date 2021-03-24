@@ -212,3 +212,15 @@ lapply(z, function(elt) elt[, 1])
 lapply(z, function(elt) elt[, 2])
 
 sapply(z, mean)
+
+library(datasets)
+head(airquality)
+s <- split(airquality, airquality$Month)
+s
+a <- split(airquality, airquality$Ozone)
+a
+s
+lapply(s, function(x) colMeans(x[, c("Ozone", "Solar.R", "Wind")], na.rm = T))
+
+library(datasets)
+head(flags)
